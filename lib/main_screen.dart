@@ -1,3 +1,5 @@
+import 'package:bilder_app_projekt/pages/about_me_page.dart';
+import 'package:bilder_app_projekt/pages/image_page.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -11,8 +13,8 @@ class _MainScreenState extends State<MainScreen> {
   int _pageIndex = 0;
 
   List<Widget> pages = [
-    Text("Hier ist eins"),
-    Text("Hier ist zwei"),
+    ImagePage(),
+    AboutMePage(),
   ];
 
   @override
@@ -25,7 +27,6 @@ class _MainScreenState extends State<MainScreen> {
       body: Column(
         children: [
           pages[_pageIndex],
-          // Text("Hello Markus"),
         ],
       ),
       bottomNavigationBar: NavigationBar(
