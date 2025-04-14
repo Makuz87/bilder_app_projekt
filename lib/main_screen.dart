@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int _pageIndex = 0;
+
+  List<Widget> pages = [
+    Text("Hier ist eins"),
+    Text("Hier ist zwei"),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("My first pictureApp"),
+        backgroundColor: const Color.fromARGB(255, 72, 171, 253),
+      ),
+      body: Column(
+        children: [
+          pages[_pageIndex],
+          // Text("Hello Markus"),
+        ],
+      ),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _pageIndex,
+        onDestinationSelected: (value) {
+          setState(() {
+            _pageIndex = value;
+          });
+        },
+        destinations: [
+          NavigationDestination(icon: Icon(Icons.image), label: "Bilder"),
+          NavigationDestination(icon: Icon(Icons.person), label: "über mich"),
+        ],
+      ),
+    );
+  }
+}
