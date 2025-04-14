@@ -1,82 +1,50 @@
+import 'package:bilder_app_projekt/gallery_data.dart';
 import 'package:flutter/material.dart';
 
 class ImagePage extends StatelessWidget {
-  const ImagePage({
-    super.key,
-  });
+  const ImagePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 3,
-      children: [
-        Image.asset(
-          "assets/images/basketball_1.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/images/basketball_2.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/images/tennis_2.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/images/kaya.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/images/soccer.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/images/ski.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/images/tennis_1.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/images/bike.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/images/running.jpeg",
-          height: 150,
-          width: 150,
-          fit: BoxFit.cover,
-        ),
-      ],
+      padding: EdgeInsets.fromLTRB(12, 16, 12, 12),
+      mainAxisSpacing: 12,
+      crossAxisSpacing: 12,
+      children: cardView(),
     );
+  }
 
-    // Column(
-    //   children: [
-    //     Image.asset("assets/images/basketball_1.jpeg"),
-    //     Image.asset("assets/images/basketball_2.jpeg"),
-    //   ],
-    // );
+  List<Widget> cardView() {
+    List<Widget> myWidget = [];
 
-    // ListView(
-    //   children: [Image.asset("assets/images/basketball_1.jpeg")],
-    // );
+    for (GalleryItem galleryItem in galleryData) {
+      myWidget.add(
+        Card(
+          color: Colors.blue[100],
+          elevation: 4,
+          child: Column(
+            children: [
+              Expanded(
+                child: Image.asset(
+                  galleryItem.imagePath,
+                  height: 150,
+                  width: 150,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Text(
+                galleryItem.imageTitle,
+                style: TextStyle(
+                  fontSize: 12,
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+    return myWidget;
   }
 }
 // TODO Implement this library.

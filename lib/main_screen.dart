@@ -20,6 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 217, 232, 245),
       appBar: AppBar(
         title: Text("My first pictureApp"),
         backgroundColor: const Color.fromARGB(255, 72, 171, 253),
