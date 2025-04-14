@@ -11,49 +11,54 @@ class ImagePage extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(12, 16, 12, 12),
       mainAxisSpacing: 12,
       crossAxisSpacing: 12,
-      children: cardView(),
+      children: cardView(context),
     );
   }
 
-  List<Widget> cardView() {
+  List<Widget> cardView(BuildContext context) {
     List<Widget> myWidget = [];
 
     for (GalleryItem galleryItem in galleryData) {
       myWidget.add(
-        Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-          color: Colors.blue[100],
-          elevation: 4,
-          child: Column(
-            // Muss das hierhin?
-            // crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Expanded(
-                  child: ClipRRect(
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(16)),
-                // Wieso geht hier ein zweites child:?
-                child: Image.asset(
-                  galleryItem.imagePath,
-                  height: 150,
-                  width: 150,
-                  fit: BoxFit.cover,
-                ),
-              )),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(2.0),
-                  child: Text(
-                    galleryItem.imageTitle,
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
+        InkWell(
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  content: Column(
+                    children: [
+                      Image.asset(galleryItem.imagePath),
+                      Text(galleryItem.imageTitle),
+                      Text(galleryItem.imageDate),
+                      Text(galleryItem.imageDescription),
+                    ],
+                  ),
+                );
+              },
+            );
+          },
+          child: Card(
+            color: Colors.blue[100],
+            elevation: 4,
+            child: Column(
+              children: [
+                Expanded(
+                  child: Image.asset(
+                    galleryItem.imagePath,
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
                   ),
                 ),
-              ),
-            ],
+                Text(
+                  galleryItem.imageTitle,
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       );
