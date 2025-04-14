@@ -40,10 +40,12 @@ class ImagePage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               )),
-              Text(
-                galleryItem.imageTitle,
-                style: TextStyle(
-                  fontSize: 12,
+              Center(
+                child: Text(
+                  galleryItem.imageTitle,
+                  style: TextStyle(
+                    fontSize: 12,
+                  ),
                 ),
               ),
             ],
