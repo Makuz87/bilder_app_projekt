@@ -21,18 +21,25 @@ class ImagePage extends StatelessWidget {
     for (GalleryItem galleryItem in galleryData) {
       myWidget.add(
         Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
           color: Colors.blue[100],
           elevation: 4,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
+                  child: ClipRRect(
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(16)),
                 child: Image.asset(
                   galleryItem.imagePath,
                   height: 150,
                   width: 150,
                   fit: BoxFit.cover,
                 ),
-              ),
+              )),
               Text(
                 galleryItem.imageTitle,
                 style: TextStyle(

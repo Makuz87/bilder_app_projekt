@@ -23,7 +23,7 @@ class _MainScreenState extends State<MainScreen> {
       backgroundColor: const Color.fromARGB(255, 217, 232, 245),
       appBar: AppBar(
         title: Text("My first pictureApp"),
-        backgroundColor: const Color.fromARGB(255, 72, 171, 253),
+        backgroundColor: const Color.fromARGB(255, 134, 192, 239),
       ),
       body: Column(
         children: [
