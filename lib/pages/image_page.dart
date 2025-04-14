@@ -7,19 +7,63 @@ class ImagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
+    return GridView.count(
+      crossAxisCount: 3,
       children: [
-        Image.asset("assets/images/basketball_1.jpeg"),
-        Image.asset("assets/images/basketball_2.jpeg"),
-        Image.asset("assets/images/bike.jpeg"),
-        Image.asset("assets/images/kaya.jpeg"),
-        Image.asset("assets/images/running.jpeg"),
-        Image.asset("assets/images/soccer.jpeg"),
-        Image.asset("assets/images/ski.jpeg"),
-        Image.asset("assets/images/tennis_1.jpeg"),
-        Image.asset("assets/images/tennis_2.jpeg"),
+        Image.asset(
+          "assets/images/basketball_1.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          "assets/images/basketball_2.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          "assets/images/tennis_2.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          "assets/images/kaya.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          "assets/images/soccer.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          "assets/images/ski.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          "assets/images/tennis_1.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          "assets/images/bike.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
+        Image.asset(
+          "assets/images/running.jpeg",
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover,
+        ),
       ],
     );
 
