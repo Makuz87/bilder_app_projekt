@@ -27,12 +27,14 @@ class ImagePage extends StatelessWidget {
           color: Colors.blue[100],
           elevation: 4,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            // Muss das hierhin?
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
                   child: ClipRRect(
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(16)),
+                // Wieso geht hier ein zweites child:?
                 child: Image.asset(
                   galleryItem.imagePath,
                   height: 150,
@@ -41,10 +43,13 @@ class ImagePage extends StatelessWidget {
                 ),
               )),
               Center(
-                child: Text(
-                  galleryItem.imageTitle,
-                  style: TextStyle(
-                    fontSize: 12,
+                child: Padding(
+                  padding: const EdgeInsets.all(2.0),
+                  child: Text(
+                    galleryItem.imageTitle,
+                    style: TextStyle(
+                      fontSize: 12,
+                    ),
                   ),
                 ),
               ),
