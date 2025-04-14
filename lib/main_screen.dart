@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: Column(
         children: [
-          pages[_pageIndex],
+          Expanded(child: pages[_pageIndex]),
         ],
       ),
       bottomNavigationBar: NavigationBar(
