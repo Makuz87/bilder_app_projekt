@@ -32,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
-        indicatorColor: Colors.blue,
+        indicatorColor: const Color.fromARGB(255, 181, 218, 249),
         backgroundColor: const Color.fromARGB(255, 134, 192, 239),
         selectedIndex: _pageIndex,
         onDestinationSelected: (value) {

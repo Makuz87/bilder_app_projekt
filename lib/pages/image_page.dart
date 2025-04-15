@@ -1,4 +1,6 @@
 import 'package:bilder_app_projekt/gallery_data.dart';
+import 'package:bilder_app_projekt/pages/detail_pages.dart';
+import 'package:bilder_app_projekt/pages/details_page.dart';
 import 'package:flutter/material.dart';
 
 class ImagePage extends StatelessWidget {
@@ -21,21 +23,12 @@ class ImagePage extends StatelessWidget {
     for (GalleryItem galleryItem in galleryData) {
       myWidget.add(
         InkWell(
+          splashColor: Colors.red,
           onTap: () {
-            showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  content: Column(
-                    children: [
-                      Image.asset(galleryItem.imagePath),
-                      Text(galleryItem.imageTitle),
-                      Text(galleryItem.imageDate),
-                      Text(galleryItem.imageDescription),
-                    ],
-                  ),
-                );
-              },
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => DetailsPage(item: galleryItem),
+              ),
             );
           },
           child: Card(
