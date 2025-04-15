@@ -41,6 +41,10 @@ class ImagePage extends StatelessWidget {
           child: Card(
             color: Colors.blue[100],
             elevation: 4,
+            clipBehavior: Clip.antiAlias,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
             child: Column(
               children: [
                 Expanded(

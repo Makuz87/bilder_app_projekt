@@ -23,6 +23,7 @@ class _MainScreenState extends State<MainScreen> {
       backgroundColor: const Color.fromARGB(255, 217, 232, 245),
       appBar: AppBar(
         title: Text("My first pictureApp"),
+        centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 134, 192, 239),
       ),
       body: Column(
@@ -31,6 +32,8 @@ class _MainScreenState extends State<MainScreen> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
+        indicatorColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 134, 192, 239),
         selectedIndex: _pageIndex,
         onDestinationSelected: (value) {
           setState(() {
