@@ -50,7 +50,7 @@ class ImagePage extends StatelessWidget {
                   galleryItem.imageTitle,
                   style: TextStyle(
                     fontSize: 12,
-                    color: const Color.fromARGB(255, 6, 84, 180),
+                    color: const Color.fromARGB(255, 4, 46, 99),
                     shadows: [
                       Shadow(
                           offset: Offset(0, 1),
