@@ -25,15 +25,21 @@ class _MainScreenState extends State<MainScreen> {
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromARGB(255, 134, 192, 239), // Blau
-                  Color.fromARGB(255, 171, 214, 249), // Blau
-                ],
-              ),
-            ),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(255, 134, 192, 239), // Blau
+                    Color.fromARGB(255, 171, 214, 249), // Blau
+                  ],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.15),
+                    offset: Offset(0, 4),
+                    blurRadius: 12,
+                  ),
+                ]),
             child: AppBar(
               title: Text("My first picture App"),
               backgroundColor: Colors.transparent,
