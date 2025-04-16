@@ -1,5 +1,4 @@
 import 'package:bilder_app_projekt/gallery_data.dart';
-import 'package:bilder_app_projekt/pages/detail_pages.dart';
 import 'package:bilder_app_projekt/pages/details_page.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +8,8 @@ class ImagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 3,
-      padding: EdgeInsets.fromLTRB(12, 16, 12, 12),
+      crossAxisCount: 2,
+      padding: EdgeInsets.fromLTRB(30, 30, 30, 30),
       mainAxisSpacing: 12,
       crossAxisSpacing: 12,
       children: cardView(context),
@@ -23,7 +22,6 @@ class ImagePage extends StatelessWidget {
     for (GalleryItem galleryItem in galleryData) {
       myWidget.add(
         InkWell(
-          splashColor: Colors.red,
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
@@ -32,8 +30,9 @@ class ImagePage extends StatelessWidget {
             );
           },
           child: Card(
-            color: Colors.blue[100],
-            elevation: 4,
+            color: const Color.fromARGB(255, 175, 208, 235),
+            elevation: 6,
+            shadowColor: Colors.blue[200],
             clipBehavior: Clip.antiAlias,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
@@ -43,8 +42,7 @@ class ImagePage extends StatelessWidget {
                 Expanded(
                   child: Image.asset(
                     galleryItem.imagePath,
-                    height: 150,
-                    width: 150,
+                    width: double.infinity,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -52,6 +50,12 @@ class ImagePage extends StatelessWidget {
                   galleryItem.imageTitle,
                   style: TextStyle(
                     fontSize: 12,
+                    color: const Color.fromARGB(255, 6, 84, 180),
+                    shadows: [
+                      Shadow(
+                          offset: Offset(0, 1),
+                          color: Colors.grey.withOpacity(0.8))
+                    ],
                   ),
                 ),
               ],

@@ -48,6 +48,20 @@ List<GalleryItem> galleryData = [
         'Eine beeindruckende Drohnenaufnahme zeigt ein Tennisfeld, das idyllisch mitten im Grünen liegt. Das leuchtend grüne Spielfeld kontrastiert wunderschön mit den umgebenden Bäumen und Wiesen. An einem sonnigen Sommertag vor einigen Jahren wurde hier ein Turnier ausgetragen, bei dem Spieler und Zuschauer gleichermaßen die atemberaubende Naturkulisse genossen.',
     imagePath: 'assets/images/tennis_2.jpeg',
   ),
+  GalleryItem(
+    imageTitle: 'Kölner Architektur',
+    imageDate: '12.03.2024',
+    imageDescription:
+        'Köln präsentiert derzeit eine der lebendigsten Architekturlandschaften in Deutschland. Die rechte Rheinseite hat mit dem Rheinboulevard gerade eine hoch attraktive Uferpromenade bekommen. Ihr Herzstück ist die neue großzügige Freitreppe zum Fluss, die sich über 500 Meter lang zwischen der Hohenzollernbrücke und der Deutzer Brücke erstreckt und schon jetzt für Kölner und Besucher der Stadtzu einem beliebten Treffpunkt geworden ist.',
+    imagePath: 'assets/images/architecture.jpg',
+  ),
+  GalleryItem(
+    imageTitle: 'Schneelandschaft',
+    imageDate: '12.03.2024',
+    imageDescription:
+        'So schön eine verzauberte Schneelandschaft sein kann, ist sie auch Arschkalt. Für Menschen, die es wärmer mögen zwar ein schönes Motiv, aber kein Ort an den sie sich wohl fühlen.',
+    imagePath: 'assets/images/pexels-michael-schlierf-757699958-29693267.jpg',
+  ),
 ];
 
 class GalleryItem {
