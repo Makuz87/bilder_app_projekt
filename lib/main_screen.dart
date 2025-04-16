@@ -44,7 +44,7 @@ class _MainScreenState extends State<MainScreen> {
               title: Text(
                 "Bilder App",
                 style: TextStyle(
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w600,
                   letterSpacing: 0.5,
                   color: Color.fromARGB(255, 4, 46, 99),
                   shadows: [
